@@ -64,3 +64,20 @@ var ninjaOne;
 ninjaOne = { name: 'Dena', age: 5 };
 var ninjaTwo;
 ninjaTwo = { name: 'mario', age: 20, beltColor: 'Brown' }; // if we try to add one more key-value pair, it will throw an error
+// DYNAMIC type
+var dino = 25;
+dino = true;
+console.log(dino);
+dino = 'belo';
+console.log(dino);
+var mixedAr = [];
+mixedAr.push(true);
+mixedAr.push(45);
+mixedAr.push('luigi');
+console.log(mixedAr);
+// we can set an object type with any value
+var pancake;
+pancake = { name: 'nutella', pieces: 8 };
+console.log(pancake);
+pancake = { name: 8, pieces: 'nutella' };
+console.log(pancake);
