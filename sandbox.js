@@ -43,3 +43,24 @@ ninja = {
     belt: 'yellow',
     age: 60
 };
+// VIDEO 5
+//explicit type
+var character;
+var year;
+var isLoggedIn;
+year = 2022;
+isLoggedIn = false;
+// arrays
+var ninjas; // we define that ninjas is a string array
+// ninjas.push('mizu') // it won't work because it is undefined, no values there yet
+// if we add an empty array by default we can avoid this issue
+// union types - 1 of 2/3 types
+var mixedArr = [];
+// both works because the type is union and we have each type defined in the parenteses()
+mixedArr.push('hellow');
+mixedArr.push(3);
+// objects
+var ninjaOne;
+ninjaOne = { name: 'Dena', age: 5 };
+var ninjaTwo;
+ninjaTwo = { name: 'mario', age: 20, beltColor: 'Brown' }; // if we try to add one more key-value pair, it will throw an error
