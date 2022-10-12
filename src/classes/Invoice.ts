@@ -1,5 +1,7 @@
+import { HasFormatter } from '../interfaces/HasFormatter.js'
+
 // CLASSES
-export class Invoice {
+export class Invoice implements HasFormatter {
     /* Long version to create the class - below you can see the shorthand for it
     readonly client: string; // we can read it outside and inside the class, but we can not change it
     private details: string; // access modifier 'private' was used --> we get an error down, because of it

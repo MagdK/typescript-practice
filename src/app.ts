@@ -1,36 +1,22 @@
-// INTERFACES
-
-interface IsPerson {
-    name: string;
-    age: number;
-    speak(a: string): void;
-    spend(a: number): number;
-}
-
-const me: IsPerson = {
-    name: 'Effi',
-    age: 8,
-    speak(text: string): void {
-        console.log(text);
-    },
-    spend(amount: number): number {
-        console.log('I spent', amount);
-        return amount;
-    }
-};
-
-let someone: IsPerson;
-
-const greetPerson = (person: IsPerson) => {
-    console.log('Hello,', person.name);
-    
-}
-
-greetPerson(me);
-
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
 
-const invOne = new Invoice('mario', 'work on the mario website', 250);
+
+/* let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('mario', 'plumbing work', 300);
+docTwo = new Payment('luigi', 'running', 200);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
+
+console.log(docs); */
+
+
+/* const invOne = new Invoice('mario', 'work on the mario website', 250);
 const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
 
 console.log(invOne, invTwo);
@@ -42,7 +28,7 @@ invoices.push(invTwo);
 invoices.forEach(inv => {
     // inv.client = 'something else'; // I get an error, because it is read only
     console.log(inv.client, inv.amount, inv.format()); 
-});
+}); */
 
 
 // To combat this we can use type casting!!!!
@@ -59,11 +45,12 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault(); // this will prevent the page refreshing when we submit the form
 
-    console.log(
-        type.value,
-        tofrom.value,
-        details.value,
-        amount.valueAsNumber
-    );
+    let doc: HasFormatter;
+    if(type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber)
+    } else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber)
+    }
+    console.log(doc);
     
 });
